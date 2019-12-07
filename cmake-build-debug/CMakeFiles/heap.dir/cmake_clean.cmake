@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/heap.dir/heap.cpp.o"
   "CMakeFiles/heap.dir/main.cpp.o"
   "heap.exe"
   "heap.pdb"

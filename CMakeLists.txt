@@ -3,4 +3,4 @@ project(heap)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(heap main.cpp)
+add_executable(heap main.cpp heap.hpp heap.cpp)

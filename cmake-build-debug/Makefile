@@ -123,6 +123,33 @@ heap/fast:
 	$(MAKE) -f CMakeFiles/heap.dir/build.make CMakeFiles/heap.dir/build
 .PHONY : heap/fast
 
+heap.o: heap.cpp.o
+
+.PHONY : heap.o
+
+# target to build an object file
+heap.cpp.o:
+	$(MAKE) -f CMakeFiles/heap.dir/build.make CMakeFiles/heap.dir/heap.cpp.o
+.PHONY : heap.cpp.o
+
+heap.i: heap.cpp.i
+
+.PHONY : heap.i
+
+# target to preprocess a source file
+heap.cpp.i:
+	$(MAKE) -f CMakeFiles/heap.dir/build.make CMakeFiles/heap.dir/heap.cpp.i
+.PHONY : heap.cpp.i
+
+heap.s: heap.cpp.s
+
+.PHONY : heap.s
+
+# target to generate assembly for a file
+heap.cpp.s:
+	$(MAKE) -f CMakeFiles/heap.dir/build.make CMakeFiles/heap.dir/heap.cpp.s
+.PHONY : heap.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... heap"
 	@echo "... edit_cache"
+	@echo "... heap.o"
+	@echo "... heap.i"
+	@echo "... heap.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

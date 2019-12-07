@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/cygdrive/c/Users/Adam/CLionProjects/heap/heap.cpp">
+			<Option target="heap"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Adam/CLionProjects/heap/heap.hpp">
+			<Option target="heap"/>
+		</Unit>
 		<Unit filename="/cygdrive/c/Users/Adam/CLionProjects/heap/main.cpp">
 			<Option target="heap"/>
 		</Unit>
