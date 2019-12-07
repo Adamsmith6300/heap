@@ -18,7 +18,8 @@ class heap {
 
 private:
     vector<T> data;
-    int dataSize;
+    int dataSize = 0;
+
     void heapify(int index){
         if(checkHeadNode()){
             fix_heap_up(index);
@@ -27,14 +28,15 @@ private:
         }
     }
     bool checkHeadNode(){
-        T leftNode = data[leftNode(0)];
-        T rightNode = data[rightNode(0)];
-        return leftNode < data[0] && rightNode < data[0];
+        T leftN = data[this->leftNode(0)];
+        T rightN= data[this->rightNode(0)];
+        return leftN < data[0] && rightN < data[0];
     }
     void fix_heap_up(int i){
-        if (i && data[parentNode(i)] > data[i]) {
-            swap(i, parentNode(i));
-            heapifyUp(parentNode(i));
+//        cout << i << endl;
+        if (i != 0 && data[this->parentNode(i)] < data[i]) {
+            swap(i, this->parentNode(i));
+            fix_heap_up(this->parentNode(i));
         }
     }
     void fix_heap_down(int i){
@@ -69,13 +71,16 @@ private:
 
 public:
     heap(const Tcontainer& tc){
-        data = container_cast<std::vector<T> >(tc);
+        vector<T> newData = container_cast<std::vector<T> >(tc);
+        for(int i = 0; i < newData.size(); ++i){
+            this->push(newData[i]);
+        }
     }
     void push(T newElement) {
         //add el to vector
         data.push_back(newElement);
-        dataSize++;
-        heapify(data.size()-1);
+//        dataSize++;
+        fix_heap_up(data.size()-1);
     }
     T pop(){
         T head = data[0];
@@ -89,7 +94,11 @@ public:
     void clear(){
         //remove all el in heap...no memory leaks
     }
-
+    friend std::ostream& operator<<(std::ostream& os, const heap<T, Tcontainer>& myHeap) {
+        for (int i = 0; i < myHeap.data.size(); ++i)
+            os << myHeap.data[i] << " ";
+        return os;
+    }
 };
 
 
